@@ -4,8 +4,8 @@ import calculateStandardDeviation from '../utils/standardDeviation';
 
 const router = express.Router();
 
-router.get('/stats', async (req: Request, res: Response): Promise<any> => {
-  const { coin } = req.query;
+router.post('/stats', async (req: Request, res: Response): Promise<any> => {
+  const { coin } = req.body;
 
   if (!coin || !['bitcoin', 'matic-network', 'ethereum'].includes(coin as string)) {
     return res.status(400).json({ error: 'Invalid coin parameter. Choose from bitcoin, matic-network, ethereum.'});
@@ -33,8 +33,8 @@ router.get('/stats', async (req: Request, res: Response): Promise<any> => {
 });
 
   
-router.get('/deviation', async (req: Request, res: Response): Promise<any> => {
-    const { coin } = req.query;  
+router.post('/deviation', async (req: Request, res: Response): Promise<any> => {
+    const { coin } = req.body;  
   
     if (!coin || !['bitcoin', 'matic-network', 'ethereum'].includes(coin as string)) {
       return res.status(400).json({ error: 'Invalid coin parameter. Choose from bitcoin, matic-network, ethereum.' });

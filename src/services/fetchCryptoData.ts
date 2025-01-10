@@ -10,8 +10,6 @@ const API_URL = process.env.API_KEY as string;
 
 const fetchCryptoData = async (): Promise<void> => {
   try {
-    await connectDB();
-
     const response = await axios.get(API_URL, {
       params: {
         ids: COINS.join(','), 
