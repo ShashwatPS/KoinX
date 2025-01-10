@@ -1,7 +1,6 @@
 import axios from 'axios';    
 import CryptoModel from '../models/cryptoModel';  
 import dotenv from 'dotenv';
-import connectDB from '../db/connect';
 
 dotenv.config();
 
